@@ -1,11 +1,16 @@
+// Nathan Samano
+// Algorithms
 // Chapter 3 Problem 4
 
-var movies = createArr("films.txt");
+var movies = createArr('films.txt');
 var movieList = new List();
 var customers = new List();
 //for (var i = 0; i < movies.length; ++i) {
 //  movieList.append(movies[i]);
 //}
+print("movies.length = " + movies.length); // 6
+print("movies[0] = " + movies[0]); // 1. The Shawshank Redemption
+//movieList.append(movies[0]);
 print("Available movies: \n");
 displayList(movieList);
 print("\nEnter your name: ");
@@ -21,10 +26,11 @@ displayList(movieList);
 ////////////////////////////
 
 function createArr(file) {
-  var arr = read(file).split(" \n");
+  var arr = read(file).split("\n");
   for (var i = 0; i < arr.length; ++i) {
-    arr[i] = arr[i].trim;
+    arr[i].trim;
   }
+  print(arr);
   return arr;
 }
 
@@ -47,6 +53,7 @@ function List() {
    this.moveTo = moveTo;
    this.getElement = getElement;
    this.length = length;
+   this.contains = contains;
 }
 
 function append(element) {
