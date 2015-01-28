@@ -20,7 +20,7 @@ var movie = readline();
 checkOut(name, movie, movieList, customers);
 print("\nCustomer Rentals: \n");
 displayList(customers);
-print("\nMovies Now Available\n");
+print("\nMovies Now Available: \n");
 displayList(movieList);
 
 ////////////////////////////
@@ -148,11 +148,16 @@ function Customer(name, movie) {
   this.movie = movie;
 }
 
+var checkOutList = new List();
+
 function checkOut(name, movie, filmList, customerList) {
   if (movieList.contains(movie)) {
     var c = new Customer(name, movie);
     customerList.append(c);
     filmList.remove(movie);
+    checkOutList.append(movie);
+    print("\nChecked Out List: \n");
+    displayList(checkOutList);
   }
   else {
     print(movie + " is not available.");
